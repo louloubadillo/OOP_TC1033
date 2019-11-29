@@ -26,15 +26,35 @@ int main(int argc, char const *argv[]){
     for(int idxA = 0; idxA < 12; idxA++){
         vector <Flight> flights;
         aicm.addAirline(airlines[idxA],flights);  
-        for(int idxF = 0; idxF < rand () % 5; idxF++){ 
+        for(int idxF = 0; idxF < rand () % 2; idxF++){ 
             flights.push_back(Flight());
             monthQuantity[flights[idxF].getMonth()]++; 
             terminalQuantity[flights[idxF].getTerminal()]++; 
             destinationQuantity[flights[idxF].getDestination()]++;  
             flightQuantityAirline[idxA]++;
-        } 
-         
+        }    
     }
+/* ¿Cuántos vuelos registrados tienen las aerolíneas que están en el aeropuerto?
+¿Cuántos vuelos de salida hay por mes?
+¿Cuántos vuelos de salida hay por destino?
+¿De qué terminal salen más vuelos?*/
+    for(int idxA = 0; idxA < 12; idxA++){
+        cout << "La aerolínea " <<  airlines[idxA] << " tiene " << flightQuantityAirline[idxA] << " vuelos"<< endl; 
+    }
+
+    for(int idxM = 0; idxM <12; idxM++ ){
+        cout << "En el mes " << idxM+1 << " hay " << monthQuantity[idxM] << " vuelos de salida registrados."<< endl; 
+    }
+
+    for(int idxD = 0; idxD < 31; idxD++ ){
+        cout << "Hacia el aeropuerto " << airportCodes[idxD] << " hay "<< destinationQuantity[idxD] << " vuelos registrados."<< endl; 
+    }
+
+    for(int idxT = 0; idxT < 2; idxT++ ){
+        cout << "Hay  " << terminalQuantity[idxT] << " vuelos registrados en la terminal "<< idxT+1<< endl; 
+    }
+
+
 
 
 
