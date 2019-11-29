@@ -7,7 +7,7 @@ class Flight{
     private:   
         int month; //1-12 (ene-dic)
         int destination; //Referente al índice del arreglo
-        int terminal; 
+        int terminal; //1-2
 
     public: 
         Flight(){
@@ -15,10 +15,23 @@ class Flight{
             destination = rand() % 30; 
             terminal = rand() % 2; 
         }
+
         Flight(int month_, int destination_, int terminal_){
             month = month_; 
             destination = destination_; 
             terminal = terminal_; 
+        }
+
+        int getMonth(){
+            return month; 
+        }
+
+        int getDestination(){
+            return destination; 
+        }
+        
+        int getTerminal(){
+            return terminal; 
         }
     
 }; 
