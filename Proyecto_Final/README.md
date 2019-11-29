@@ -21,9 +21,9 @@ En el directorio donde se encuentra el repositorio, ir a la carpeta Proyecto_Fin
 ```bash
 cd Proyecto_Final
 ```
-Compilar el archivo
+Compilar el archivo y generar un ejecutable
 ```bash
-g++ main.cpp -o main
+g++ -o aero.exe main.cpp -std=c++14
 ```
 Correr main
 ```bash
