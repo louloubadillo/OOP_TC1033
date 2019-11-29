@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <array>
 #include <ctime> 
 #include <cstdlib>
 #include "airport.hpp"
@@ -14,18 +15,30 @@ int main(int argc, char const *argv[]){
     //12 most important airlines in Mexico
     vector <string> airlines = {"Interjet", "Aeromexico", "VivaAerobus", "Aeromar", "Volaris", "TAR Aerolineas", "American Airlines", "Delta Airlines", "United Airlines", "Turkish Airlines", "Lufthansa", "Air France"}; 
 
-    vector <int> monthQuantity = {0}; 
-    int t1 = 0, t2 = 0; 
-    string name; 
+    int monthQuantity[12] = {0}; 
+    int terminalQuantity[2]; 
+    int destinationQuantity[31]; 
+    int flightQuantityAirline[12]; 
+
     Airport aicm("AICM"); 
 
 
     for(int idxA = 0; idxA < 12; idxA++){
         vector <Flight> flights;
-        aicm.addAirline(airlines[idxA],flights); // 
-        for(int idxF = 0; idxF < rand () % 5; idxF++){ //random idxF
-            flights.push_back(Flight()); 
-        }  
+        aicm.addAirline(airlines[idxA],flights);  
+        for(int idxF = 0; idxF < rand () % 5; idxF++){ 
+            flights.push_back(Flight());
+            monthQuantity[flights[idxF].getMonth()]++; 
+            terminalQuantity[flights[idxF].getTerminal()]++; 
+            destinationQuantity[flights[idxF].getDestination()]++;  
+            flightQuantityAirline[idxA]++;
+        } 
+         
     }
+
+
+
+
+
     return 0;
 }
