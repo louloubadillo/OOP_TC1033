@@ -1,4 +1,5 @@
 # Analizador del AICM
+:airplane:
 Este programa genera aleatoriamente vuelos, simulando el flujo del Aeropuerto Internacional de la Ciudad de México. 
 Posteriormente, realiza análisis de los vuelos y las aerolíneas que salen de éste. 
 El programa responde lo siguiente: 
