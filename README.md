@@ -4,7 +4,7 @@ Todos los programas realizados durante la materia de Programación Orientada a O
 
 ## ¿Cómo usar los códigos? 
 
-Seleccionar una carpeta donde y clonar el repositorio
+Clonar el repositorio
 ```bash
 git clone https://github.com/louloubadillo/OOP_TC1033.git
 ```
