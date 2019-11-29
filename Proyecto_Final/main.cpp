@@ -19,18 +19,13 @@ int main(int argc, char const *argv[]){
     string name; 
     Airport aicm("AICM"); 
 
-    vector <Flight> flights;
-
-    for(int idxF = 0; idxF <20; idxF++){
-        flights.push_back(Flight()); 
-    } 
 
     for(int idxA = 0; idxA < 12; idxA++){
-        aicm.addAirline(airlines[idxA],flights);
-    }
-
-    for(int idxAl = 0; idxAl <flights.size(); idxAl++){
-
+        vector <Flight> flights;
+        aicm.addAirline(airlines[idxA],flights); // 
+        for(int idxF = 0; idxF < rand () % 5; idxF++){ //random idxF
+            flights.push_back(Flight()); 
+        }  
     }
     return 0;
 }
