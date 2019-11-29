@@ -10,10 +10,14 @@ class Airline{
     public: 
         vector <Flight> flights; 
 
-        Airline(string name_ , vector<Flight> flights_, int total ){
+        Airline(string name_ , vector<Flight> flights_){
             string name = name_;  
             vector <Flight> flights = flights_;  
-            int totalFlights = total; 
+            totalFlights++; 
+        }
+
+        void addFlight(Flight flight_){
+            flights.push_back(flight_);
         }
 
         void addFlight(int m, int d, int t){
