@@ -16,23 +16,26 @@ int main(int argc, char const *argv[]){
     vector <string> airlines = {"Interjet", "Aeromexico", "VivaAerobus", "Aeromar", "Volaris", "TAR Aerolineas", "American Airlines", "Delta Airlines", "United Airlines", "Turkish Airlines", "Lufthansa", "Air France"}; 
 
     int monthQuantity[12] = {0}; 
-    int terminalQuantity[2]; 
-    int destinationQuantity[31]; 
-    int flightQuantityAirline[12]; 
+    int terminalQuantity[2] = {0}; 
+    int destinationQuantity[31] = {0}; 
+    int flightQuantityAirline[12] = {0}; 
 
     Airport aicm("AICM"); 
 
 
-    for(int idxA = 0; idxA < 12; idxA++){
+    for(int idxA = 0; idxA < 12; idxA++){ 
         vector <Flight> flights;
-        aicm.addAirline(airlines[idxA],flights);  
-        for(int idxF = 0; idxF < rand () % 2; idxF++){ 
-            flights.push_back(Flight());
+        srand(time(NULL)); 
+        int randomidx = rand()%10 - rand()%2; 
+        for(int idxF = 0; randomidx; idxF++){ 
+            flights.push_back(Flight(rand()%12, rand()%31, (rand()%2)));  
             monthQuantity[flights[idxF].getMonth()]++; 
             terminalQuantity[flights[idxF].getTerminal()]++; 
             destinationQuantity[flights[idxF].getDestination()]++;  
             flightQuantityAirline[idxA]++;
-        }    
+            randomidx = rand()%10; 
+        }
+        aicm.addAirline(airlines[idxA],flights);    
     }
 /* ¿Cuántos vuelos registrados tienen las aerolíneas que están en el aeropuerto?
 ¿Cuántos vuelos de salida hay por mes?

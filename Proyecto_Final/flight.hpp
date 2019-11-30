@@ -11,9 +11,10 @@ class Flight{
 
     public: 
         Flight(){
-            month = rand() % 12; 
-            destination = rand() % 31; 
-            terminal = rand() % 2 + 1; 
+            srand (time(0));
+            month = rand()%100 * (rand()%12); 
+            destination = (rand()%31); 
+            terminal = (rand()%2)+1; 
         }
 
         Flight(int month_, int destination_, int terminal_){
