@@ -33,4 +33,6 @@ Correr main
 
 Este es el diagrama UML que utilicé para desarrollar este programa: 
 
+![UML Diagram](uml.png)
+
 
