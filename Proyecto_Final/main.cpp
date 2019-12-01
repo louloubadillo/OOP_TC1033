@@ -22,18 +22,18 @@ int main(int argc, char const *argv[]){
     //Salen del Aeropuerto  Internacional de la Ciudad de México. 
     Airport aicm("AICM"); 
 
+    srand((int)time(0));
 
     for(int idxA = 0; idxA < 12; idxA++){ 
         vector <Flight> flights;
-        srand((int)time(0)); 
         int randomidx = (rand() % 20 + 1); 
-        for(int idxF = 0; randomidx; idxF++){ 
+        for(int idxF = 0; idxF < randomidx; idxF++){ 
             flights.push_back(Flight(rand()%12, rand()%31, (rand()%2)));  
             monthQuantity[flights[idxF].getMonth()]++; 
             terminalQuantity[flights[idxF].getTerminal()]++; 
             destinationQuantity[flights[idxF].getDestination()]++;  
             flightQuantityAirline[idxA]++;
-            randomidx = rand()%10; 
+            randomidx = rand()%20; 
         }
         aicm.addAirline(airlines[idxA],flights);    
     }
