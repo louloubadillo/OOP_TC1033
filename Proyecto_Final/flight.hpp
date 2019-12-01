@@ -11,8 +11,8 @@ class Flight{
 
     public: 
         Flight(){
-            srand (time(0));
-            month = rand()%100 * (rand()%12); 
+            srand((int)time(0));
+            month = (rand()%12); 
             destination = (rand()%31); 
             terminal = (rand()%2)+1; 
         }
