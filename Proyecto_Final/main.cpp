@@ -22,8 +22,10 @@ int main(int argc, char const *argv[]){
     //Salen del Aeropuerto  Internacional de la Ciudad de México. 
     Airport aicm("AICM"); 
 
+    //Permite que se utilice el método rand() con resultados diferentes
     srand((int)time(0));
 
+    //Crear aerolíneas con sus vuelos
     for(int idxA = 0; idxA < 12; idxA++){ 
         vector <Flight> flights;
         int randomidx = (rand() % 20 + 1); 
@@ -37,22 +39,19 @@ int main(int argc, char const *argv[]){
         }
         aicm.addAirline(airlines[idxA],flights);    
     }
-/* ¿Cuántos vuelos registrados tienen las aerolíneas que están en el aeropuerto?
-¿Cuántos vuelos de salida hay por mes?
-¿Cuántos vuelos de salida hay por destino?
-¿De qué terminal salen más vuelos?*/
+    //Responde: ¿Cuántos vuelos registrados tienen las aerolíneas que están en el aeropuerto?
     for(int idxA = 0; idxA < 12; idxA++){
         cout << "La aerolínea " <<  airlines[idxA] << " tiene " << flightQuantityAirline[idxA] << " vuelos"<< endl; 
     }
-
+    //Responde: ¿Cuántos vuelos de salida hay por mes?
     for(int idxM = 0; idxM <12; idxM++ ){
         cout << "En el mes " << idxM+1 << " hay " << monthQuantity[idxM] << " vuelos de salida registrados."<< endl; 
     }
-
+    //Responde: ¿Cuántos vuelos de salida hay por destino?
     for(int idxD = 0; idxD < 31; idxD++ ){
         cout << "Hacia el aeropuerto " << airportCodes[idxD] << " hay "<< destinationQuantity[idxD] << " vuelos registrados."<< endl; 
     }
-
+    // Responde: ¿De qué terminal salen más vuelos?
     for(int idxT = 0; idxT < 2; idxT++ ){
         cout << "Hay  " << terminalQuantity[idxT] << " vuelos registrados en la terminal "<< idxT+1<< endl; 
     }
