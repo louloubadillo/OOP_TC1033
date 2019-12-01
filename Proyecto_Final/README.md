@@ -31,7 +31,7 @@ Correr main
 ```
 ## Diagrama UML
 
-Este es el diagrama UML que utilicé para desarrollar este programa: 
+Este es el diagrama UML: 
 
 ![UML Diagram](uml.png)
 
