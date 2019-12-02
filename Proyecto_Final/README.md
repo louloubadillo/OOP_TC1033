@@ -35,4 +35,10 @@ Este es el diagrama UML:
 
 ![UML Diagram](uml.png)
 
+## Pruebas
+- La suma total de los vuelos es la misma para todos los contadores. (por mes, por destino, por terminal)
+- Los números se generan aleatoriamente y cambian cada que se agrega un vuelo. 
+- Los vuelos sí se están agregando a las aerolíneas. (Se pueden ver con .getFlights())
+- La cantidad de vuelos mostrada en los contadores por aerolínea coincide con airline.getTotalFlights()
+
 
