@@ -29,14 +29,14 @@ int main(int argc, char const *argv[]){
     for(int idxA = 0; idxA < 12; idxA++){ 
         //Crea un vector flights para cada aerolínea
         vector <Flight> flights;
-        int randomidx = (rand() % 20 + 1); 
+        int randomidx = ((rand() % 20 )+ 1); 
         for(int idxF = 0; idxF < randomidx; idxF++){ //La cantidad de vuelos por aerolínea es al azar
             flights.push_back(Flight(rand()%12, rand()%31, (rand()%2)));  //Agrega el vuelo al vector de vuelos de la aerolínea. 
             monthQuantity[flights[idxF].getMonth()]++;  //Incrementa en el índice correspondiente al mes
             terminalQuantity[flights[idxF].getTerminal()]++; //Incrementa en el índice correspondiente a la terminal
             destinationQuantity[flights[idxF].getDestination()]++; //Incrementa en el índice correspondiente al destino
             flightQuantityAirline[idxA]++; //Incrementa en el índice correspondiente a la aerolínea
-            randomidx = rand()%20; //Cambia la cantidad de vuelos que se van a agregar
+            randomidx = rand()%20 * 10; //Cambia la cantidad de vuelos que se van a agregar
         }
         //Se agrega la aerolínea con todos sus vuelos al AICM.
         aicm.addAirline(airlines[idxA],flights);    
