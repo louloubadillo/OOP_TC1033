@@ -6,8 +6,8 @@
 #include "airport.hpp"
 using namespace std;
 int main(int argc, char const *argv[]){
-    //Los 30 aeropuertos más importantes del mundo y AICM
-    vector<string> airportCodes = {"MEX","ATL","PEK","ORD","LHR","HND","LAX","CDG","DFW",
+    //Los 30 aeropuertos más importantes del mundo y MTY
+    vector<string> airportCodes = {"MTY","ATL","PEK","ORD","LHR","HND","LAX","CDG","DFW",
     "FRA","DEN","HKG","MAD","DXB","JFK","AMS","CGK","BKK","SIN","CAN","PVG","IAH",
     "LAS","SFO","PHX","CLT","FCO","SYD","MIA","MCO","MUC"};
     //Por cada airportCode hay un airportIndex, esto va a permitir tener un contador por destino.  
@@ -70,9 +70,12 @@ int main(int argc, char const *argv[]){
         cout << "Hay  " << terminalQuantity[idxT] << " vuelos registrados en la terminal "<< idxT+1<< endl; 
     }
     cout << "En total hay: " << terminalFlightsTotal << " vuelos." << endl;
-    if(terminalQuantity[0] > terminalQuantity[1]){
-        cout << "La terminal 1 tiene más vuelos registrados." << endl; 
-    }else{
+    if(terminalQuantity[0] == terminalQuantity[1]){
+        cout << "La terminal 1 y 2 tienen la misma cantidad de vuelos." << endl; 
+    }else if(terminalQuantity[0] > terminalQuantity[1]){
+        cout << "La terminal 1 tiene más vuelos registrados." << endl;
+    }
+    else{
         cout << "La terminal 2 tiene más vuelos registrados." << endl; 
     }
 
