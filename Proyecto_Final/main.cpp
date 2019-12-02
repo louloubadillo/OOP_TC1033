@@ -40,21 +40,34 @@ int main(int argc, char const *argv[]){
         aicm.addAirline(airlines[idxA],flights);    
     }
     //Responde: ¿Cuántos vuelos registrados tienen las aerolíneas que están en el aeropuerto?
+    int airlinesFlightsTotal = 0; 
     for(int idxA = 0; idxA < 12; idxA++){
+        airlinesFlightsTotal += flightQuantityAirline[idxA] ; 
         cout << "La aerolínea " <<  airlines[idxA] << " tiene " << flightQuantityAirline[idxA] << " vuelos"<< endl; 
     }
+    //Prueba: La cantidad de vuelos coincide siempre. 
+    cout << "En total hay: " << airlinesFlightsTotal << " vuelos." << endl; 
     //Responde: ¿Cuántos vuelos de salida hay por mes?
+    int monthFlightsTotal = 0; 
     for(int idxM = 0; idxM <12; idxM++ ){
+        monthFlightsTotal += monthQuantity[idxM] ;
         cout << "En el mes " << idxM+1 << " hay " << monthQuantity[idxM] << " vuelos de salida registrados."<< endl; 
     }
+    cout << "En total hay: " << monthFlightsTotal << " vuelos." << endl;
     //Responde: ¿Cuántos vuelos de salida hay por destino?
+    int destinationFlightsTotal = 0; 
     for(int idxD = 0; idxD < 31; idxD++ ){
+        destinationFlightsTotal += destinationQuantity[idxD] ;
         cout << "Hacia el aeropuerto " << airportCodes[idxD] << " hay "<< destinationQuantity[idxD] << " vuelos registrados."<< endl; 
     }
+    cout << "En total hay: " << destinationFlightsTotal << " vuelos." << endl;
     // Responde: ¿De qué terminal salen más vuelos?
+    int terminalFlightsTotal = 0; 
     for(int idxT = 0; idxT < 2; idxT++ ){
+        terminalFlightsTotal += terminalQuantity[idxT] ;
         cout << "Hay  " << terminalQuantity[idxT] << " vuelos registrados en la terminal "<< idxT+1<< endl; 
     }
+    cout << "En total hay: " << terminalFlightsTotal << " vuelos." << endl;
     if(terminalQuantity[0] > terminalQuantity[1]){
         cout << "La terminal 1 tiene más vuelos registrados." << endl; 
     }else{
