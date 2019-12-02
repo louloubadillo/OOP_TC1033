@@ -33,7 +33,7 @@ Correr main
 
 Este es el diagrama UML: 
 
-![UML Diagram](uml.PNG)
+![UML Diagram](uml.png)
 
 ## Pruebas
 - La suma total de los vuelos es la misma para todos los contadores. (por mes, por destino, por terminal)
